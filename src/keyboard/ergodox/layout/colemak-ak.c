@@ -49,6 +49,9 @@
 #define slpunum  &kbfun_layer_push_numpad
 #define slponum  &kbfun_layer_pop_numpad
 
+// Media keys
+#define mprrel   &kbfun_mediakey_press_release
+
 //
 // Layout
 //
@@ -69,11 +72,11 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                _ctrlL,     1,     2,
 
     // Right
-                      _F7, _F8,  _F9,   _F10,    _F11,       _F12,       0,
-                   _pageU,  _J,   _L,     _U,      _Y, _semicolon,    _del,
-                            _H,   _N,     _E,      _I,         _O,    _tab,
-                   _pageD,  _K,   _M, _comma, _period,     _slash, _shiftR,
-                                _F18,   _F19,    _F20,       _F21,    _F22,
+                      _F7, _F8,  _F9,   _F10,    _F11,       _F12, MEDIAKEY_PLAY_PAUSE,
+                   _pageU,  _J,   _L,     _U,      _Y, _semicolon,                _del,
+                            _H,   _N,     _E,      _I,         _O,                _tab,
+                   _pageD,  _K,   _M, _comma, _period,     _slash,             _shiftR,
+                                _F18,   _F19,    _F20,       _F21,                _F22,
     _altR, _guiR,
      _F24,     0,       0,
         3, _enter, _space
@@ -200,7 +203,7 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                     kprrel, lpush1, lpush2,
 
     // Right
-                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
+                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, mprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                              kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
@@ -331,7 +334,7 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
                                                     kprrel,  lpop1,  lpop2,
 
     // Right
-                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
+                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, mprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                              kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
