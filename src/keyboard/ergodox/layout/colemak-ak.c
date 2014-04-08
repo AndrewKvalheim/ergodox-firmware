@@ -97,7 +97,7 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                             0, 0, 0,
 
     // Right
-          0,          0,         0,         0,      0,          0, 0,
+          0,          0,         0,         0,      0,          0, MEDIAKEY_NEXT_TRACK,
           0,          0, _bracketL, _bracketR, _grave, _semicolon, 0,
              _backslash,        _9,        _0, _quote,     _quote, 0,
           0,          0, _bracketL, _bracketR,     _1, _backslash, 0,
@@ -228,7 +228,7 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
+                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, mprrel,
                     ktrans,    NULL,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
                             sshprre, sshprre, sshprre,  kprrel, sshprre, ktrans,
                     ktrans,    NULL, sshprre, sshprre, sshprre,  kprrel,   NULL,
@@ -359,7 +359,7 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
+                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, mprrel,
                     ktrans,    NULL,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
                             sshprre, sshprre, sshprre,  kprrel, sshprre, ktrans,
                     ktrans,    NULL, sshprre, sshprre, sshprre,  kprrel,   NULL,
