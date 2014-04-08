@@ -57,14 +57,14 @@
 //
 
 const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-  // Layer 0: Word
+  // Layer 0: Soft Colemak
   KB_MATRIX_LAYER(
     0,
 
     // Left
     _application,   _F1,  _F2,  _F3,  _F4, _F5,   _F6,
-            _esc,    _Q,   _W,   _F,   _P,  _G, _home,
-             _bs,    _A,   _R,   _S,   _T,  _D,
+            _esc,    _Q,   _W,   _E,   _R,  _T, _home,
+             _bs,    _A,   _S,   _D,   _F,  _G,
          _shiftL,    _Z,   _X,   _C,   _V,  _B,  _end,
             _F13,  _F14, _F15, _F16, _F17,
                                                        _guiL, _altL,
@@ -73,9 +73,9 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
     // Right
                       _F7, _F8,  _F9,   _F10,    _F11,       _F12, MEDIAKEY_PLAY_PAUSE,
-                   _pageU,  _J,   _L,     _U,      _Y, _semicolon,                _del,
-                            _H,   _N,     _E,      _I,         _O,                _tab,
-                   _pageD,  _K,   _M, _comma, _period,     _slash,             _shiftR,
+                   _pageU,  _Y,   _U,     _I,      _O,         _P,                _del,
+                            _H,   _J,     _K,      _L, _semicolon,                _tab,
+                   _pageD,  _N,   _M, _comma, _period,     _slash,             _shiftR,
                                 _F18,   _F19,    _F20,       _F21,                _F22,
     _altR, _guiR,
      _F24,     0,       0,
@@ -98,10 +98,10 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
     // Right
           0,          0,         0,         0,      0,          0, MEDIAKEY_NEXT_TRACK,
-          0,          0, _bracketL, _bracketR, _grave, _semicolon, 0,
-             _backslash,        _9,        _0, _quote,     _quote, 0,
-          0,          0, _bracketL, _bracketR,     _1, _backslash, 0,
-                                 0,         0,      0,          0, 0,
+          0,          0, _bracketL, _bracketR, _grave, _semicolon,                   0,
+             _backslash,        _9,        _0, _quote,     _quote,                   0,
+          0,          0, _bracketL, _bracketR,     _1, _backslash,                   0,
+                                 0,         0,      0,          0,                   0,
     0, 0,
     0, 0, 0,
     4, 0, 0
@@ -139,8 +139,8 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     // Left
     0, 0,  0,  0,  0, 0,  0,
     0, 0,  0, _W,  0, 0, _H,
-    0, 0, _A, _S, _D, 0,
-    0, 0,  0,  0,  0, 0, _L,
+    0, 0, _A, _D, _G, 0,
+    0, 0,  0,  0,  0, 0, _U,
     0, 0,  0,  0,  0,
                           0, 0,
                        0, 0, 0,
@@ -148,9 +148,9 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 
     // Right
            0, 0,       0,       0,       0, 0, 0,
-          _K, 0,       0, _arrowU,       0, 0, 0,
+          _N, 0,       0, _arrowU,       0, 0, 0,
               0, _arrowL, _arrowD, _arrowR, 0, 0,
-          _J, 0,       0,       0,       0, 0, 0,
+          _Y, 0,       0,       0,       0, 0, 0,
                        0,       0,       0, 0, 0,
     0, 0,
     0, 0,  0,
@@ -188,7 +188,7 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 //
 
 const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-  // Layer 0: Word
+  // Layer 0: Soft Colemak
   KB_MATRIX_LAYER(
     NULL,
 
@@ -319,7 +319,7 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 //
 
 const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-  // Layer 0: Word
+  // Layer 0: Soft Colemak
   KB_MATRIX_LAYER(
     NULL,
 
