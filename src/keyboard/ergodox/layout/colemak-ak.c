@@ -31,14 +31,17 @@
 #define lpush2   &kbfun_layer_push_2
 #define lpush3   &kbfun_layer_push_3
 #define lpush4   &kbfun_layer_push_4
+#define lpush5   &kbfun_layer_push_5
 #define lpop1    &kbfun_layer_pop_1
 #define lpop2    &kbfun_layer_pop_2
 #define lpop3    &kbfun_layer_pop_3
 #define lpop4    &kbfun_layer_pop_4
+#define lpop5    &kbfun_layer_pop_5
 #define lsticky1 &kbfun_layer_sticky_1
 #define lsticky2 &kbfun_layer_sticky_2
 #define lsticky3 &kbfun_layer_sticky_3
 #define lsticky4 &kbfun_layer_sticky_4
+#define lsticky5 &kbfun_layer_sticky_5
 
 // Device
 #define dbtldr   &kbfun_jump_to_bootloader
@@ -157,12 +160,12 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     0, 0,  0
   ),
 
-  // Layer 4: System
+  // Layer 4: Recovery
   KB_MATRIX_LAYER(
     0,
 
     // Left
-         0, 0, 0, 0, 0, 0, 0,
+         5, 0, 0, 0, 0, 0, 0,
     _ctrlR, 0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0, 0, 0,
@@ -180,6 +183,31 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     0, 0,
     0, 0, 0,
     4, 0, _sysReq
+  ),
+
+  // Layer 5: Hard Colemak
+  KB_MATRIX_LAYER(
+    0,
+
+    // Left
+    5,  0,  0,  0,  0,  0, 0,
+    0, _Q, _W, _F, _P, _G, 0,
+    0, _A, _R, _S, _T, _D,
+    0, _Z, _X, _C, _V, _B, 0,
+    0,  0,  0,  0,  0,
+                           0, 0,
+                           0, 0, 0,
+                           0, 0, 0,
+
+    // Right
+          0,  0,  0,      0,       0,          0, 0,
+          0, _J, _L,     _U,      _Y, _semicolon, 0,
+             _H, _N,     _E,      _I,         _O, 0,
+          0, _K, _M, _comma, _period,     _slash, 0,
+                  0,      0,       0,          0, 0,
+    0, 0,
+    0, 0, 0,
+    0, 0, 0
   )
 };
 
@@ -288,12 +316,12 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     ktrans, ktrans, ktrans
   ),
 
-  // Layer 4: System
+  // Layer 4: Recovery
   KB_MATRIX_LAYER(
     NULL,
 
     // Left hand
-      NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
+    lpush5,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
     kprrel, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
       NULL, ktrans, ktrans, ktrans, ktrans, ktrans,
       NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
@@ -311,6 +339,31 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
      NULL, NULL,
      NULL, NULL,   NULL,
     lpop4, NULL, kprrel
+  ),
+
+  // Layer 5: Hard Colemak
+  KB_MATRIX_LAYER(
+    NULL,
+
+    // Left
+     lpop5, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+    ktrans, ktrans, ktrans, ktrans, ktrans,
+                                                            ktrans, ktrans,
+                                                    ktrans, ktrans, ktrans,
+                                                    ktrans, ktrans, ktrans,
+
+    // Right
+                    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                            kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                                    ktrans, ktrans, ktrans, ktrans, ktrans,
+    ktrans, ktrans,
+    ktrans, ktrans, ktrans,
+    ktrans, ktrans, ktrans
   )
 };
 
@@ -419,7 +472,7 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
     ktrans, ktrans, ktrans
   ),
 
-  // Layer 4: System
+  // Layer 4: Recovery
   KB_MATRIX_LAYER(
     NULL,
 
@@ -442,5 +495,30 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
      NULL, NULL,
      NULL, NULL,   NULL,
      NULL, NULL, kprrel
+  ),
+
+  // Layer 5: Hard Colemak
+  KB_MATRIX_LAYER(
+    NULL,
+
+    // Left
+      NULL, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel,
+    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+    ktrans, ktrans, ktrans, ktrans, ktrans,
+                                                            ktrans, ktrans,
+                                                    ktrans, ktrans, ktrans,
+                                                    ktrans, ktrans, ktrans,
+
+    // Right
+                    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                            kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                    ktrans, kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                                    ktrans, ktrans, ktrans, ktrans, ktrans,
+    ktrans, ktrans,
+    ktrans, ktrans, ktrans,
+    ktrans, ktrans, ktrans
   )
 };
