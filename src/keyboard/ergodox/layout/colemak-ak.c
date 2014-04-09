@@ -125,11 +125,11 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                             0, 0, 0,
 
     // Right
-          0,         0,  0,      0,       0,         0, 0,
-          0, _bracketL, _7,     _8,      _9, _bracketR, 0,
-                    _9, _4,     _5,      _6,        _0, 0,
-          0, _bracketL, _1,     _2,      _3, _bracketR, 0,
-                        _0, _comma, _period,         0, 0,
+          0,  0,  0,  0,  0,       0, 0,
+          0,  0, _7, _8, _9,       0, 0,
+             _0, _4, _5, _6, _period, 0,
+          0,  0, _1, _2, _3,       0, 0,
+                  0,  0,  0,       0, 0,
     0, 0,
     0, 0, 0,
     0, 0, 0
@@ -281,11 +281,11 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
-                    ktrans,  kprrel,  kprrel,  kprrel,  kprrel,  kprrel, ktrans,
-                            sshprre,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
-                    ktrans, sshprre,  kprrel,  kprrel,  kprrel, sshprre,   NULL,
-                                      kprrel,  kprrel,  kprrel,  ktrans, ktrans,
+                    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                    ktrans,   NULL, kprrel, kprrel, kprrel,   NULL, ktrans,
+                            kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                    ktrans,   NULL, kprrel, kprrel, kprrel,   NULL,   NULL,
+                                    ktrans, ktrans, ktrans, ktrans, ktrans,
     ktrans, ktrans,
     ktrans, ktrans, ktrans,
     ktrans, ktrans, ktrans
@@ -437,11 +437,11 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
-                    ktrans,  kprrel,  kprrel,  kprrel,  kprrel,  kprrel, ktrans,
-                            sshprre,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
-                    ktrans, sshprre,  kprrel,  kprrel,  kprrel, sshprre,   NULL,
-                                      kprrel,  kprrel,  kprrel,  ktrans, ktrans,
+                    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                    ktrans,   NULL, kprrel, kprrel, kprrel,   NULL, ktrans,
+                            kprrel, kprrel, kprrel, kprrel, kprrel, ktrans,
+                    ktrans,   NULL, kprrel, kprrel, kprrel,   NULL,   NULL,
+                                    ktrans, ktrans, ktrans, ktrans, ktrans,
     ktrans, ktrans,
     ktrans, ktrans, ktrans,
     ktrans, ktrans, ktrans
