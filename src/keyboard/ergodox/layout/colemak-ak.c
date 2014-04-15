@@ -70,19 +70,19 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
              _bs,    _A,   _S,   _D,   _F,  _G,
          _shiftL,    _Z,   _X,   _C,   _V,  _B,  _end,
             _F13,  _F14, _F15, _F16, _F17,
-                                                       _guiL, _altL,
-                                                    0,     0,  _F23,
-                                               _ctrlL,     1,     2,
+                                                        _F18,   _F19,
+                                                    0,     0, _enter,
+                                               _ctrlL, _altL,  _guiL,
 
     // Right
-                      _F7, _F8,  _F9,   _F10,    _F11,       _F12, MEDIAKEY_PLAY_PAUSE,
-                   _pageU,  _Y,   _U,     _I,      _O,         _P,                _del,
-                            _H,   _J,     _K,      _L, _semicolon,                _tab,
-                   _pageD,  _N,   _M, _comma, _period,     _slash,             _shiftR,
-                                _F18,   _F19,    _F20,       _F21,                _F22,
-    _altR, _guiR,
-     _F24,     0,       0,
-        3, _enter, _space
+                      _F7, _F8, _F9,   _F10,    _F11,       _F12, MEDIAKEY_PLAY_PAUSE,
+                   _pageU,  _Y,  _U,     _I,      _O,         _P,                _del,
+                            _H,  _J,     _K,      _L, _semicolon,                _tab,
+                   _pageD,  _N,  _M, _comma, _period,     _slash,                   1,
+                                  3,      2,    _F22,       _F23,                _F24,
+    _F20,    _F21,
+    _bs,        0,      0,
+    _altR, _enter, _space
   ),
 
   // Layer 1: Symbol
@@ -100,14 +100,14 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                             0, 0, 0,
 
     // Right
-          0,          0,         0,         0,      0,          0, MEDIAKEY_NEXT_TRACK,
-          0,          0, _bracketL, _bracketR, _grave, _semicolon,                   0,
-             _backslash,        _9,        _0, _quote,     _quote,                   0,
-          0,          0, _bracketL, _bracketR,     _1, _backslash,                   0,
-                                 0,         0,      0,          0,                   0,
+          0,          0,         0,         0,      0,          0, 0,
+          0,          0, _bracketL, _bracketR, _grave, _semicolon, 0,
+             _backslash,        _9,        _0, _quote,     _quote, 0,
+          0,          0, _bracketL, _bracketR,     _1, _backslash, 0,
+                                 0,         0,      0,          0, 0,
     0, 0,
     0, 0, 0,
-    4, 0, 0
+    0, 0, 0
   ),
 
   // Layer 2: Number
@@ -140,8 +140,8 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     0,
 
     // Left
-    0, 0,  0,  0,  0, 0,  0,
-    0, 0,  0, _W,  0, 0, _H,
+    5, 0,  0,  0,  0, 0,  0,
+    4, 0,  0, _W,  0, 0, _H,
     0, 0, _A, _D, _G, 0,
     0, 0,  0,  0,  0, 0, _U,
     0, 0,  0,  0,  0,
@@ -150,11 +150,11 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                        0, 0, 0,
 
     // Right
-           0, 0,       0,       0,       0, 0, 0,
-          _N, 0,       0, _arrowU,       0, 0, 0,
-              0, _arrowL, _arrowD, _arrowR, 0, 0,
-          _Y, 0,       0,       0,       0, 0, 0,
-                       0,       0,       0, 0, 0,
+           0, 0,       0,       0,       0, 0, MEDIAKEY_NEXT_TRACK,
+          _N, 0,       0, _arrowU,       0, 0,                   0,
+              0, _arrowL, _arrowD, _arrowR, 0,                   0,
+          _Y, 0,       0,       0,       0, 0,                   0,
+                       0,       0,       0, 0,                   0,
     0, 0,
     0, 0,  0,
     0, 0,  0
@@ -165,14 +165,14 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     0,
 
     // Left
-         5, 0, 0, 0, 0, 0, 0,
-    _ctrlR, 0, 0, 0, 0, 0, 0,
+         0, 0, 0, 0, 0, 0, 0,
+         4, 0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0,
                               0, 0,
                            0, 0, 0,
-                       _altL, 0, 0,
+                      _ctrlR, 0, 0,
 
     // Right
           0, 0, 0, 0, 0, 0, 0,
@@ -182,7 +182,7 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                 0, 0, 0, 0, 0,
     0, 0,
     0, 0, 0,
-    4, 0, _sysReq
+    0, 0, _sysReq
   ),
 
   // Layer 5: Hard Colemak
@@ -228,17 +228,17 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     kprrel, kprrel, kprrel, kprrel, kprrel,
                                                             kprrel, kprrel,
                                                       NULL,   NULL, kprrel,
-                                                    kprrel, lpush1, lpush2,
+                                                    kprrel, kprrel, kprrel,
 
     // Right
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, mprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                              kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-                                     kprrel, kprrel, kprrel, kprrel, kprrel,
+                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, lpush1,
+                                     lpush3, lpush2, kprrel, kprrel, kprrel,
     kprrel, kprrel,
     kprrel,   NULL,   NULL,
-    lpush3, kprrel, kprrel
+    kprrel, kprrel, kprrel
   ),
 
   // Layer 1: Symbol
@@ -256,14 +256,14 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, mprrel,
+                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
                     ktrans,    NULL,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
                             sshprre, sshprre, sshprre,  kprrel, sshprre, ktrans,
                     ktrans,    NULL, sshprre, sshprre, sshprre,  kprrel,   NULL,
                                       ktrans,  ktrans,  ktrans,  ktrans, ktrans,
     ktrans, ktrans,
     ktrans, ktrans, ktrans,
-    lpush4, ktrans, ktrans
+    ktrans, ktrans, ktrans
   ),
 
   // Layer 2: Number
@@ -296,8 +296,8 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     NULL,
 
     // Left hand
-    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
-    ktrans,   NULL,   NULL, kprrel,   NULL,   NULL, kprrel,
+    lpush5, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+    lpush4,   NULL,   NULL, kprrel,   NULL,   NULL, kprrel,
     ktrans,   NULL, kprrel, kprrel, kprrel,   NULL,
     ktrans,   NULL,   NULL,   NULL,   NULL,   NULL, kprrel,
     ktrans, ktrans, ktrans, ktrans, ktrans,
@@ -306,7 +306,7 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
                                                     ktrans, ktrans, ktrans,
 
     // Right
-                ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, mprrel,
                 kprrel,   NULL,   NULL, kprrel,   NULL,   NULL, ktrans,
                           NULL, kprrel, kprrel, kprrel,   NULL, ktrans,
                 kprrel,   NULL,   NULL,   NULL,   NULL,   NULL, ktrans,
@@ -321,24 +321,24 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
     NULL,
 
     // Left hand
-    lpush5,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
-    kprrel, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-      NULL, ktrans, ktrans, ktrans, ktrans, ktrans,
-      NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-      NULL,   NULL,   NULL,   NULL,   NULL,
-                                                            NULL,   NULL,
-                                                    NULL,   NULL,   NULL,
-                                                  kprrel,   NULL,   NULL,
+     NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
+    lpop4, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+     NULL, ktrans, ktrans, ktrans, ktrans, ktrans,
+     NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+     NULL,   NULL,   NULL,   NULL,   NULL,
+                                                           NULL, NULL,
+                                                   NULL,   NULL, NULL,
+                                                 kprrel, ktrans, NULL,
 
     // Right
-                   NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
-                   NULL, ktrans, ktrans, ktrans, ktrans,   NULL, NULL,
-                         ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-                   NULL, ktrans, ktrans,   NULL,   NULL,   NULL, NULL,
-                                   NULL,   NULL,   NULL,   NULL, NULL,
-     NULL, NULL,
-     NULL, NULL,   NULL,
-    lpop4, NULL, kprrel
+                  NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
+                  NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+                        ktrans, ktrans, ktrans, ktrans,   NULL, NULL,
+                  NULL, ktrans, ktrans,   NULL,   NULL,   NULL, NULL,
+                                  NULL,   NULL,   NULL,   NULL, NULL,
+    NULL, NULL,
+    NULL, NULL,   NULL,
+    NULL, NULL, kprrel
   ),
 
   // Layer 5: Hard Colemak
@@ -384,17 +384,17 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
     kprrel, kprrel, kprrel, kprrel, kprrel,
                                                             kprrel, kprrel,
                                                       NULL,   NULL, kprrel,
-                                                    kprrel,  lpop1,  lpop2,
+                                                    kprrel, kprrel, kprrel,
 
     // Right
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, mprrel,
                      kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                              kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
-                                     kprrel, kprrel, kprrel, kprrel, kprrel,
+                     kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,  lpop1,
+                                      lpop3,  lpop2, kprrel, kprrel, kprrel,
     kprrel, kprrel,
     kprrel,   NULL,   NULL,
-     lpop3, kprrel, kprrel
+    kprrel, kprrel, kprrel
   ),
 
   // Layer 1: Symbol
@@ -412,14 +412,14 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
                                                          ktrans, ktrans, ktrans,
 
     // Right
-                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, mprrel,
+                    ktrans,  ktrans,  ktrans,  ktrans,  ktrans,  ktrans, ktrans,
                     ktrans,    NULL,  kprrel,  kprrel,  kprrel, sshprre, ktrans,
                             sshprre, sshprre, sshprre,  kprrel, sshprre, ktrans,
                     ktrans,    NULL, sshprre, sshprre, sshprre,  kprrel,   NULL,
                                       ktrans,  ktrans,  ktrans,  ktrans, ktrans,
     ktrans, ktrans,
     ktrans, ktrans, ktrans,
-      NULL, ktrans, ktrans
+    ktrans, ktrans, ktrans
   ),
 
   // Layer 2: Number
@@ -452,8 +452,8 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
     NULL,
 
     // Left hand
-    ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
-    ktrans,   NULL,   NULL, kprrel,   NULL,   NULL, kprrel,
+      NULL, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+      NULL,   NULL,   NULL, kprrel,   NULL,   NULL, kprrel,
     ktrans,   NULL, kprrel, kprrel, kprrel,   NULL,
     ktrans,   NULL,   NULL,   NULL,   NULL,   NULL, kprrel,
     ktrans, ktrans, ktrans, ktrans, ktrans,
@@ -462,7 +462,7 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
                                                     ktrans, ktrans, ktrans,
 
     // Right
-                ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
+                ktrans, ktrans, ktrans, ktrans, ktrans, ktrans, mprrel,
                 kprrel,   NULL,   NULL, kprrel,   NULL,   NULL, ktrans,
                           NULL, kprrel, kprrel, kprrel,   NULL, ktrans,
                 kprrel,   NULL,   NULL,   NULL,   NULL,   NULL, ktrans,
@@ -477,24 +477,24 @@ const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] =
     NULL,
 
     // Left hand
-      NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
-    kprrel, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-      NULL, ktrans, ktrans, ktrans, ktrans, ktrans,
-      NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-      NULL,   NULL,   NULL,   NULL,   NULL,
-                                                            NULL,   NULL,
-                                                    NULL,   NULL,   NULL,
-                                                  kprrel,   NULL,   NULL,
+    NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
+    NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+    NULL, ktrans, ktrans, ktrans, ktrans, ktrans,
+    NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+    NULL,   NULL,   NULL,   NULL,   NULL,
+                                                          NULL, NULL,
+                                                  NULL,   NULL, NULL,
+                                                kprrel, ktrans, NULL,
 
     // Right
-                   NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
-                   NULL, ktrans, ktrans, ktrans, ktrans,   NULL, NULL,
-                         ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
-                   NULL, ktrans, ktrans,   NULL,   NULL,   NULL, NULL,
-                                   NULL,   NULL,   NULL,   NULL, NULL,
-     NULL, NULL,
-     NULL, NULL,   NULL,
-     NULL, NULL, kprrel
+                  NULL,   NULL,   NULL,   NULL,   NULL,   NULL, NULL,
+                  NULL, ktrans, ktrans, ktrans, ktrans, ktrans, NULL,
+                        ktrans, ktrans, ktrans, ktrans,   NULL, NULL,
+                  NULL, ktrans, ktrans,   NULL,   NULL,   NULL, NULL,
+                                  NULL,   NULL,   NULL,   NULL, NULL,
+    NULL, NULL,
+    NULL, NULL,   NULL,
+    NULL, NULL, kprrel
   ),
 
   // Layer 5: Hard Colemak
